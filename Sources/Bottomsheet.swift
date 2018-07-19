@@ -360,7 +360,7 @@ open class Bottomsheet {
         open func dismiss(_ sender: AnyObject? = nil) {
             state = .hide
         }
-        dynamic func handleTap(_ gestureRecognizer: UITapGestureRecognizer) {
+        @objc dynamic func handleTap(_ gestureRecognizer: UITapGestureRecognizer) {
             switch viewActionType {
             case .tappedPresent:
                 present()
@@ -370,7 +370,7 @@ open class Bottomsheet {
                 break
             }
         }
-        dynamic func handleGestureDragging(_ gestureRecognizer: UIPanGestureRecognizer) {
+        @objc dynamic func handleGestureDragging(_ gestureRecognizer: UIPanGestureRecognizer) {
             let gestureView = gestureRecognizer.view
             let point = gestureRecognizer.translation(in: gestureView)
             let originY = maxHeight - initializeHeight
